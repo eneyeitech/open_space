@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Open Space</title>
+    <style>
+        .space{
+            display: flex;
+            background-image: url("space.png");
+            max-height: 100%;
+        }
+        .planet-area{
+            flex: 1;
+            z-index: 1;
+        }
+        .control-panel{
+            background:
+                    linear-gradient(63deg, #999 23%, transparent 23%) 7px 0,
+                    linear-gradient(63deg, transparent 74%, #999 78%),
+                    linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%),
+                    #444;
+            background-size: 16px 48px;
+        }
+        .control-panel__inner{
+            background: saddlebrown;
+            flex: 1;
+        }
+        .planet{
+            position: relative;
+
+            z-index: 5;
+            width: 30%;
+        }
+        .rocket{
+            position: relative;
+            bottom: 200px;
+            left: -150px;
+            width: 100px;
+            transform: rotate(25deg);
+            z-index: 3;
+        }
+        .check-buttons{
+            display: flex;
+            flex-direction: row;
+        }
+        .levers{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .levers input{
+            flex: 1;
+            transform: rotate(-90deg);
+            align-self: end;
+        }
+
+        .check-buttons input{
+            flex: 1;
+        }
+        input[type="password"]{
+            font-style: italic;
+            border: 2px dotted darkgreen;
+            color: darkblue;
+        }
+        input[type="button"]{
+            background: #66cc66;
+        }
+        input[value="launch"]{
+
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: 1px solid saddlebrown;
+        }
+        input[type="checkbox"], input[type="range"]{
+
+        }
+    </style>
+
+    <script async src="main.js">
+
+
+
+    </script>
+</head>
+<body>
+    <div class="space">
+        <div class="planet-area">
+            <img src="mars.png" class="planet">
+            <img src="rocket.png" class="rocket">
+        </div>
+        <div class="control-panel">
+            <div class="control-panel__inner">
+                <input type="password" placeholder="Enter password">
+                <input type="button" value="ok" onclick="getPassword()">
+                <div class="check-buttons">
+                    <input type="checkbox" >
+                    <input type="checkbox" >
+                    <input type="checkbox" >
+                    <input type="checkbox" >
+                    <input type="checkbox" >
+                    <input type="checkbox" >
+                </div>
+                <div class="levers">
+                    <input type="range" >
+                    <input type="range" >
+                    <input type="range" >
+                    <input type="range" >
+                    <input type="range" >
+                </div>
+                <input type="button" value="launch" onclick="launchRocket()">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
